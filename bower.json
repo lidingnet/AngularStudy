@@ -1,0 +1,17 @@
+{
+  "name": "AngularStudy",
+  "homepage": "https://github.com/lidingnet/AngularStudy",
+  "authors": [
+    "李丁 <lidingnet@126.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
