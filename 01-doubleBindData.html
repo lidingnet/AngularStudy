@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div ng-app>
+    <div ng-app ng-init="user.name='ld'">
         <input type="text" placeholder="请输入姓名" ng-model="user.name">
         <p>hello <strong>{{user.name}}</strong></p>
         <script src="bower_components/angular/angular.js"></script>
