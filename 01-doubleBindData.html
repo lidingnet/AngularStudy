@@ -7,6 +7,17 @@
     <title>Document</title>
 </head>
 <body>
+<!--
+所有需要ng管理的代码必须被包裹在一个有ng-app指令的元素中
+ng-app是ng的入口，表示当前元素的所有指令都会被angular管理（对每一个指令进行分析和操作）
+-->
+<!-- 
+    当网页加载完毕，AngularJS 自动开始执行；
+HTML 页面中 ng-xxx 的属性称之为  指令（Directive）；
+ng-app 指令告诉 AngularJS，<div> 元素是 AngularJS 应用程序管理的边界；
+ng-model 指令把文本框的值绑定到变量 name 上；
+{{ name }} 表达式就是把应用程序变量 name 绑定到某个段落的 innerHTML
+ -->
     <div ng-app ng-init="user.name='ld'">
         <input type="text" placeholder="请输入姓名" ng-model="user.name">
         <p>hello <strong>{{user.name}}</strong></p>

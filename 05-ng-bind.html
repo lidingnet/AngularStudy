@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body ng-app ng-init="data1='<h1>绑定的值</h1>'">
+    <strong ng-bind="data1">
+
+    </strong>
+    <strong><h1>绑定的值</h1></strong>
+    <script>
+        // 将作用域（scope）中的值绑定到元素的innerHTML上，效果优于表达式绑定，
+        // 页面加载开始不会显示{{}}的表达式
+        // 注意：如果绑定的内容有HTML， 会自动转义
+
+    </script>
+    <script src="./bower_components/angular/angular.js"></script>
+
+</body>
+</html>

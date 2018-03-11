@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+    
+<body>
+    <div ng-app="myApp1" ng-controller="App1Controller">
+        <input type="button" value="按钮1" ng-click="do1()">
+    </div>
+    <div ng-app="myApp2" ng-controller="App2Controller">
+            <input type="button" value="按钮2" ng-click="do2()">
+        </div>
+    <script src="./bower_components/angular/angular.js"></script>
+    <script>
+        // • ng-app指令用来标明一个AngularJS应用程序
+        // • 标记在一个AngularJS的作用范围的根对象上
+        // • 系统执行时会自动的执行根对象范围内的其他指令
+        // • 可以在同一个页面创建多个ng-app节点（不推荐）
+        // • 创建多个ng-app时，默认只能执行第一个，后面的需要手动引导：angular.bootstrap();
+        // • 标记范围越小越好 
+        var myApp1= angular.module('myApp1', []);
+        myApp1.controller('App1Controller', ['$scope', function($scope){
+            $scope.do1= function() {
+                alert("myApp1");
+            };
+        }]);
+
+        var myApp2= angular.module('myApp2', []);
+        myApp2.controller('App2Controller', ['$scope', function($scope){
+            $scope.do2= function() {
+                alert("myApp2");
+            };
+        }]);
+        
+        //使用多个ng-app 
+        //方法1：手动让第二个div被myApp2管理
+        angular.bootstrap(document.querySelector('[ng-app="myApp2"]'), ['myApp2']);
+    </script>
+
+</body>
+</html>

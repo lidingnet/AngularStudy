@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .green {color: green}
+        .red {color: red}
+    </style>
+</head>
+<body ng-app="myApp">
+    <ul ng-controller="ListController">
+        <!-- 方式1 -->
+        <!-- <li class={{$even?'red':'green'}} ng-repeat="item in className">{{item.name}}:{{item.age}}:{{item.gender}}</li> -->
+        <!-- 方式2 推荐 -->
+        <li ng-class="{red:$even, green:$odd}" ng-repeat="item in className">{{item.name}}:{{item.age}}:{{item.gender}}</li>
+    </ul>
+    <ul ng-controller="ListController">
+            <li ng-repeat="item in className">
+                {{$first?'第一条:':''}}
+                {{item.name}}
+                :{{item.age}}
+                :{{item.gender}}
+                {{$last?'没有了.':''}}
+            </li>
+        </ul>
+    <script src="./bower_components/angular/angular.js"></script>
+    <script>
+        angular.module("myApp", [])
+        .controller('ListController',['$scope', function($scope){
+            $scope.className= [
+                {name: "张三", age: "12", gender:"男"},
+                {name: "张三", age: "14", gender:"女"},
+                {name: "张三", age: "11", gender:"男"},
+                {name: "张儿", age: "11", gender:"女"},
+                {name: "张三", age: "22", gender:"男"},
+                {name: "张11", age: "133", gender:"男"}
+            ]
+        }])
+    </script>
+</body>
+</html>
