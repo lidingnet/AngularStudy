@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS 表达式</title>
+    <style>
+        .border {
+            border: 1px solid #666;
+            padding: 10px;
+        }
+    </style>
+    <script src="../bower_components/angular/angular.js"></script>
+</head>
+<body ng-app="">
+    <h3>AngularJS 使用 表达式 把数据绑定到 HTML。</h3>
+    <p>
+        AngularJS 表达式写在双大括号内：{{ expression }}。<br>
+        AngularJS 表达式把数据绑定到 HTML，这与 ng-bind 指令有异曲同工之妙。<br>
+        AngularJS 将在表达式书写的位置"输出"数据。<br>
+        <b ng-non-bindable="true">AngularJS 表达式 很像 JavaScript 表达式：它们可以包含文字、运算符和变量。</b><br>
+        <div class="border">
+            <b ng-non-bindable="true">实例 5+5={{ 5 + 5 }} 或 {{ firstName + " " + lastName }}</b><br>
+            <div >
+                5+5= {{5+5}}
+            </div>
+            
+        </div>
+    </p>
+        <hr>
+    <p>
+            
+        <h3>AngularJS 数字</h3>
+        AngularJS 数字就像 JavaScript 数字：<br>
+        <div class="border">
+            <b>
+                    实例：<xmp ng-non-bindable=""><div ng-init="quantity=3; cost=8">总价={{quantity * cost}}</div></xmp>
+            </b>
+            <div ng-init="quantity=3; cost=8">总价={{quantity * cost}}</div>
+        </div>
+    </p>
+    <hr>
+    <p>
+        <h3>AngularJS 字符串</h3>
+        <div class="border">
+            <b>
+                AngularJS 实例:
+                <xmp ng-non-bindable=""><p>姓名： {{ firstname + " " + lastname }}</p></xmp>
+                <xmp ng-non-bindable=""><p>姓名： <span ng-bind="firstname + ' ' + lastname"></span></p></xmp>
+                <p ng-init="firstname='xing'; lastname='ming'">
+                        <div>姓名：{{firstname + " " + lastname}}</div>
+                        <div ng-bind="'姓名：' + firstname + ' ' + lastname"></div>
+                </p>
+            </b>
+            
+        </div>
+    </p>
+
+    <hr>
+    <h3>AngularJS 对象就像 JavaScript 对象：</h3>
+    <div class="border">
+        <xmp ng-non-bindable=""><div ng-app="" ng-init="person={firstName:'John',lastName:'Doe'}"></xmp>
+            <div ng-init="person={firstName:'John',lastName:'Doe'}">
+                <p>姓为 <span ng-bind="person.lastName"></span></p>
+            </div>
+        <hr>
+        <xmp ng-non-bindable=""> ng-init="points=[1,15,19,2,40]"</xmp>
+        <div ng-init="points=[1,15,19,2,40]">
+            <p>第三个值为 {{ points[2] }}</p>
+        </div>
+        <hr>
+
+        
+
+    </div>
+</body>
+</html>

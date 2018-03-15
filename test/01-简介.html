@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <script src="../bower_components/angular/angular.js"></script> -->
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script>
+    // ng-app 指令定义一个 AngularJS 应用程序。
+
+    // ng-model 指令把元素值（比如输入域的值）绑定到应用程序。
+
+    // ng-bind 指令把应用程序数据绑定到 HTML 视图。
+
+    
+    // 实例讲解：
+
+    // 当网页加载完毕，AngularJS 自动开启。
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- // ng-app 指令告诉 AngularJS，<div> 元素是 AngularJS 应用程序 的"所有者"。
+    // ng-model 指令把输入域的值绑定到应用程序变量 name。
+    // ng-bind 指令把应用程序变量 name 绑定到某个段落的 innerHTML。 -->
+    <!-- ng-init 指令初始化 AngularJS 应用程序变量。 -->
+
+    <!-- HTML5 允许扩展的（自制的）属性，以 data- 开头。
+    AngularJS 属性以 ng- 开头，但是您可以使用 data-ng- 来让网页对 HTML5 有效。 -->
+    <div ng-app="myApp" ng-init="hello='你好'" ng-controller="myCtrl">
+        <input type="text" ng-model="name" ng-init="name='Sir'">
+        <div>{{hello}}: {{name}}</div>
+
+        <!-- AngularJS 表达式写在双大括号内：{{ expression }}。
+            AngularJS 表达式把数据绑定到 HTML，这与 ng-bind 指令有异曲同工之妙。
+            AngularJS 将在表达式书写的位置"输出"数据。
+            AngularJS 表达式 很像 JavaScript 表达式：它们可以包含文字、运算符和变量 -->
+        <p ng-non-bindable="">表达式：{{5+5}}</p>
+        <div>{{5+5}}</div>
+        <p ng-non-bindable="">表达式：{{hello + ":" + name}}</p>
+        <div>{{hello + ":" + name}}</div>
+        
+        <p>
+                AngularJS 模块（Module） 定义了 AngularJS 应用。<br>
+                AngularJS 控制器（Controller） 用于控制 AngularJS 应用。                <br>
+                ng-app指令指明了应用, ng-controller 指明了控制器。
+        </p>
+        <input type="text" ng-model="firstname">
+        <input type="text" ng-model="lastname">
+        <span>{{firstname + "  " + lastname}}</span>
+        <script>
+            angular.module('myApp',[])
+                .controller('myCtrl', ['$scope', function($scope){
+                    $scope.firstname= 'Lee';
+                    $scope.lastname='Ding';
+                }]);
+
+        </script>
+    </div>
+</p>
+</body>
+</html>
+
